@@ -16,17 +16,29 @@ class OnboardingScreen extends StatelessWidget {
       SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 30.h),
-          child: Column(
-            children:[
-            const DoctorLogoAndName(),
-            SizedBox(height:30.h),
-            const DoctorImageAndText(),
-            
-              Text(
-                'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                style:TextStyles.font13grayReguler),
-              const GetStartedButton(),  
-            ])
+          child:  Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:[
+              const DoctorLogoAndName(),
+              SizedBox(height:30.h),
+              const DoctorImageAndText(),
+              
+              Padding(
+                padding:  EdgeInsets.symmetric( horizontal: 30.w),
+                child: Column(
+                  children: [
+                    Text(
+                      textAlign:TextAlign.center,
+                        'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
+                        style:TextStyles.font13grayReguler),
+                    SizedBox(height: 20.h,),
+                  const GetStartedButton(),      
+                  ],
+                ),
+              ),
+                  
+              ]),
+          
           ),
         ),
       ),
