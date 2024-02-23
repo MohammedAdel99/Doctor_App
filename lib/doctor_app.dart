@@ -20,7 +20,7 @@ class DoctorApp extends StatelessWidget {
         title: 'Doctor App',
         initialRoute: Routes.onBoardingScreen,
         onGenerateRoute: AppRouter.generateRoute,
-        theme: ThemeData(primaryColor: ColorManager.mainBlue),
+        theme: ThemeData(primaryColor: ColorsManager.mainBlue),
         debugShowCheckedModeBanner: false,
       ),
     );
