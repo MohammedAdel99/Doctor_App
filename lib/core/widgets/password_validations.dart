@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:doctor_app/core/theming/colors.dart';
 import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 
 class PasswordValidations extends StatelessWidget {
@@ -40,16 +40,12 @@ class PasswordValidations extends StatelessWidget {
   Widget buildValidationRow(String text, bool hasValidated) {
     return Row(
       children: [
-        CircleAvatar(
-          radius: 13.r,
-          backgroundColor: hasValidated ? Colors.green :Colors.red,
-          child: Center(child: const Icon(Icons.check ,color: Colors.white,)),
-        ),
+         Center(child: hasValidated? const Icon( Icons.check ,color: Colors.green,): const CircleAvatar(radius: 2.5,backgroundColor: Colors.black,)), 
         SizedBox(width:6.w),
         Text(
           text,
           style: TextStyles.font13DarkBlueRegular.copyWith(
-            color: hasValidated? Colors.green :Colors.red,
+            color: hasValidated? Colors.green :Colors.black,
           ),
         )
       ],

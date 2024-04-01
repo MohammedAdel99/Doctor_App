@@ -4,20 +4,18 @@ import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor_app/core/widgets/app_text_button.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/data/models/login_request_body.dart';
 import 'package:doctor_app/features/login/presentation/widgets/email_and_password.dart';
 import 'package:doctor_app/features/login/presentation/widgets/login_bloc_listener.dart';
+import 'package:doctor_app/features/login/presentation/widgets/dont_have_account_text.dart';
 import 'package:doctor_app/features/login/presentation/widgets/terms_and_conditions_text.dart';
-import 'package:doctor_app/features/login/presentation/widgets/already_have_account_text.dart';
 
 
-class LoginScreen extends StatefulWidget {
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
 
-class _LoginScreenState extends State<LoginScreen> {
-  bool isObscureText = true;
+
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 16.h,
             ),
             const TermsAndConditionsText(),
-            SizedBox(height: 60.h),
-            const AlreadyHaveAccountText(),
+            SizedBox(height: 16.h),
+            const DontHaveAccountText(),
             const LoginBlocListener()
           ]),
         ),
@@ -71,11 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginStates(
-        LoginRequestBody(email: context.read<LoginCubit>().emailController.text,
-        password: context.read<LoginCubit>().passwordController.text
-        )
-      );
+      context.read<LoginCubit>().emitLoginStates();
     }
   }
 }

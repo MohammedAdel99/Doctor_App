@@ -4,7 +4,7 @@ import 'package:doctor_app/core/helpers/app_regex.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor_app/core/widgets/app_text_form_field.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/presentation/widgets/password_validations.dart';
+
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});
@@ -85,12 +85,12 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           SizedBox(
             height: 24.h,
           ),
-          PasswordValidations(
-              hasLowerCase: hasLowercase,
-              hasUpperCase: hasUppercase,
-              hasSpecialCharacters: hasSpecialCharacters,
-              hasNumber: hasNumber,
-              hasMinLength: hasMinLength)
+          // PasswordValidations(
+          //     hasLowerCase: hasLowercase,
+          //     hasUpperCase: hasUppercase,
+          //     hasSpecialCharacters: hasSpecialCharacters,
+          //     hasNumber: hasNumber,
+          //     hasMinLength: hasMinLength)
         ],
       ),
     );
